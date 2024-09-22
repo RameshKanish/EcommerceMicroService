@@ -38,7 +38,7 @@ public class ProductController {
     @GetMapping("/{product_id}")
     public ResponseEntity<Product> getProductById(@PathVariable int product_id) throws ProductNotFoundException {
         Product prodObj = pb.getProductById(product_id);
-        return new ResponseEntity<>(prodObj , HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(prodObj , HttpStatus.BAD_GATEWAY);
     }
 
     // Get All the products.
