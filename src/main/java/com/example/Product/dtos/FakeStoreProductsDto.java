@@ -1,15 +1,17 @@
-package com.example.Product.models;
+package com.example.Product.dtos;
 
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class Product {
+@Getter
+@Setter
+
+public class FakeStoreProductsDto {
     public int id;
     public String title;
     public Double price;
     public String description;
     public String category;
     public String image;
-
 }
