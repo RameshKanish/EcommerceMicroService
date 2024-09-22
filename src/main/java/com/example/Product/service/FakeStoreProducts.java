@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Service
+@Service("fakeStore")
 public class FakeStoreProducts implements ProductService{
 
      @Override
@@ -26,6 +26,12 @@ public class FakeStoreProducts implements ProductService{
          System.out.println("fakeStoreProductsDto"+fakeStoreProductsDto);
          Product product = convertDtotoProduct(fakeStoreProductsDto);
          return product;
+    }
+
+    @Override
+
+    public Product createProduct(String name, Double price, String description, String category, String image) {
+        return null;
     }
 
     public List<Product> getAllProducts(){
