@@ -36,9 +36,9 @@ public class ProductController {
 
 
     @GetMapping("/{product_id}")
-    public ResponseEntity<Product> getProductById(@PathVariable int product_id) throws ProductNotFoundException {
+        public ResponseEntity<Product> getProductById(@PathVariable int product_id) throws ProductNotFoundException {
         Product prodObj = pb.getProductById(product_id);
-        return new ResponseEntity<>(prodObj , HttpStatus.BAD_GATEWAY);
+        return new ResponseEntity<>(prodObj , HttpStatus.ACCEPTED);
     }
 
     // Get All the products.
@@ -50,5 +50,11 @@ public class ProductController {
             throw new NullPointerException("Result is null");
         }
         return new ResponseEntity<>(productList , HttpStatus.OK);
+    }
+    @GetMapping("/findByName/{name}")
+    public ResponseEntity<List<Product>> getAllProductByName(@PathVariable String name){
+        System.out.println("Name"+name);
+        List<Product> productList = pb.getProductByName(name);
+        return new ResponseEntity<>(productList , HttpStatus.ACCEPTED);
     }
 }

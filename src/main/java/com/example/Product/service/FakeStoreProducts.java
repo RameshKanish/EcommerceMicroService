@@ -51,6 +51,16 @@ public class FakeStoreProducts implements ProductService{
         return productList;
     }
 
+    @Override
+    public List<Product> getProductByName(String title) {
+        return null;
+    }
+
+    @Override
+    public Product updateProduct(int productId) {
+        return null;
+    }
+
     private Product convertDtotoProduct(FakeStoreProductsDto fakeStoreProductsDto){
         Product product = new Product();
 
