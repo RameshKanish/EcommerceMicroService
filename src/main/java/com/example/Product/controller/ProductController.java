@@ -53,7 +53,7 @@ public class ProductController {
     }
     @GetMapping("/findByName/{name}")
     public ResponseEntity<List<Product>> getAllProductByName(@PathVariable String name){
-        System.out.println("Name"+name);
+
         List<Product> productList = pb.getProductByName(name);
         return new ResponseEntity<>(productList , HttpStatus.ACCEPTED);
     }
